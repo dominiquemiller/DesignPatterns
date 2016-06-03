@@ -1,0 +1,21 @@
+{
+  "name": "javascript-patterns",
+  "description": "code examples for design patterns",
+  "main": "",
+  "authors": [
+    "Dominique Miller <dominique.p.miller@gmail.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "requirejs": "^2.2.0"
+  }
+}
