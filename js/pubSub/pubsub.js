@@ -5,7 +5,7 @@ define(function() {
         return {
             publish: function(topic, data){
                 if (!subscribers[topic]) {
-                    return
+                    return;
                 }
 
                 subscribers[topic].forEach(function(subscriber) {
@@ -13,10 +13,20 @@ define(function() {
                 });
              },
             subscribe: function(topic, callback) {
+                var index;
                  if(!subscribers[topic]) {
                     subscribers[topic] = []; 
                  }
-                 subscribers[topic].push(callback);
+                 index = subscribers[topic].push(callback) -1;
+                 console.log('Index of topic: ' + index);
+                 console.log('List of subscribers: ' + subscribers[topic]);
+
+                 return {
+                     dispose: function() {
+                        subscribers[topic].splice(index, -1);
+                        console.log('List of subscribers: ' + subscribers);
+                    }
+                };
             }
         };
 });
